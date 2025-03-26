@@ -6,6 +6,8 @@ Package go_conditionals provides utility functions for conditional checks and va
 Currently, this package provides the following functionality:
 
   - IsZeroValue: A function to check if a given value is the zero value for its type.
+  - IsEmptySlice: A function to check if a given slice is empty.
+  - IsEmptyMap: A function to check if a given map is empty.
 
 # Installation
 
@@ -15,26 +17,28 @@ To use this package in your Go project, you can install it using:
 
 # Usage
 
-Here's an example of how to use the IsZeroValue function:
+Here's an example of how to use the functions:
 
 	package main
 
 	import (
 	    "fmt"
-	    "github.com/yourusername/go-conditionals"
+	    "github.com/ilhamtubagus/go-conditionals"
 	)
 
 	func main() {
+	    // IsZeroValue examples
 	    fmt.Println(go_conditionals.IsZeroValue(0))          // true
 	    fmt.Println(go_conditionals.IsZeroValue(""))         // true
-	    fmt.Println(go_conditionals.IsZeroValue(false))      // true
-	    fmt.Println(go_conditionals.IsZeroValue([]int{}))    // true
-	    fmt.Println(go_conditionals.IsZeroValue(struct{}{})) // true
-
 	    fmt.Println(go_conditionals.IsZeroValue(1))          // false
-	    fmt.Println(go_conditionals.IsZeroValue("hello"))    // false
-	    fmt.Println(go_conditionals.IsZeroValue(true))       // false
-	    fmt.Println(go_conditionals.IsZeroValue([]int{1,2})) // false
+
+	    // IsEmptySlice examples
+	    fmt.Println(go_conditionals.IsEmptySlice([]int{}))   // true
+	    fmt.Println(go_conditionals.IsEmptySlice([]int{1}))  // false
+
+	    // IsEmptyMap examples
+	    fmt.Println(go_conditionals.IsEmptyMap(map[string]int{}))  // true
+	    fmt.Println(go_conditionals.IsEmptyMap(map[string]int{"a": 1}))  // false
 	}
 
 # Function Documentation
@@ -64,6 +68,30 @@ Parameters:
 
 Returns:
   - bool: true if value is the zero value for its type, false otherwise.
+
+## IsEmptySlice
+
+	func IsEmptySlice(slice interface{}) bool
+
+IsEmptySlice checks if the given slice is empty.
+
+Parameters:
+  - slice: interface{} - The value to be checked. Should be a slice of any type.
+
+Returns:
+  - bool: true if slice is empty or nil, false otherwise.
+
+## IsEmptyMap
+
+	func IsEmptyMap(m interface{}) bool
+
+IsEmptyMap checks if the given map is empty.
+
+Parameters:
+  - m: interface{} - The value to be checked. Should be a map of any type.
+
+Returns:
+  - bool: true if m is a map and contains no elements, false otherwise.
 
 # Contributing
 
