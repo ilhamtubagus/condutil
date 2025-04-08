@@ -1,5 +1,5 @@
 /*
-Package go_conditionals provides utility functions for conditional checks and value comparisons in Go.
+Package condutil provides utility functions for conditional checks and value comparisons in Go.
 
 # Features
 
@@ -101,7 +101,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 */
-package go_conditionals
+package condutil
 
 // This file is left intentionally empty.
 // It's used only for package documentation.

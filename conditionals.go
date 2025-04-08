@@ -1,4 +1,4 @@
-package go_conditionals
+package condutil
 
 import "reflect"
 
