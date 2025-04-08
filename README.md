@@ -15,4 +15,4 @@ Currently, this package provides the following functionality:
 To use this package in your Go project, you can install it using:
 
 ```bash
-go get github.com/ilhamtubagus/go-conditionals
+go get github.com/ilhamtubagus/condutil
